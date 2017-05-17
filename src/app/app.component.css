@@ -1,0 +1,21 @@
+.formula-cells{
+    padding-left : 20px;
+    padding-top : 10px;
+    line-height: 30px;
+    font-size:   15pt;
+    font-family: "Times New Roman", Georgia, Serif;
+    width :30%;
+}
+
+.formula-std{
+    line-height: 30px;
+    font-size:   15pt;
+    font-family: "Times New Roman", Georgia, Serif;
+    border-style: solid;
+    border-width: medium;
+}
+
+.tap-img{
+    padding-left: 50px;
+    padding-top : 20px;
+}

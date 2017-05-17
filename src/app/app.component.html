@@ -1,3 +1,81 @@
-<h1>
+<h1 style="text-align:center">
   {{title}}
 </h1>
+<table>
+  <tr>
+    <td class="formula-std">
+      V = &#8719;&nbsp;r&nbsp;<sup>2</sup>&nbsp;h<br/>
+      <span>r doen't change with respect to time, so it is a constant.</span><br/>
+      r = 50 meters<br/>
+      V = &#8719; ( 50 ) <sup>2</sup> h <br/>
+      V = 2500 &#8719; h <br/>
+      <sup>dV</sup>&frasl;<sub>dt</sub> = 2500 &#8719; <sup>dh</sup>&frasl;<sub>dt</sub>
+    </td>
+    <td colspan=2 style="text-align: right;">
+      <video width="320" height="240" loop #videoPlayer>
+        <source src="assets/images/{{videoSource}}" type="video/mp4">
+      </video>
+    </td>
+  </tr>
+  <tr>
+    <td class="formula-cells" class="tap-img">
+      <img *ngIf="! tap1Switch" src="assets/images/tap1.jpg" height="100" width="100">
+      <img *ngIf="tap1Switch" src="assets/images/tap1on.gif" height="100" width="100">
+    </td>
+    <td class="formula-cells" class="tap-img">
+      <img *ngIf="! tap2Switch" src="assets/images/tap2.jpg" height="100" width="100">
+      <img *ngIf="tap2Switch" src="assets/images/tap2on.gif" height="100" width="100">
+    </td>
+    <td class="formula-cells" class="tap-img">
+      <img *ngIf="! tap3Switch" src="assets/images/tap3.jpg" height="100" width="100">
+      <img *ngIf="tap3Switch" src="assets/images/tap3on.gif" height="100" width="100">
+    </td>
+  </tr>
+  <tr>
+    <td class="formula-cells">
+      Bathroom Tap: 
+      <p-inputSwitch [(ngModel)]="tap1Switch" (click)="tapClick()"></p-inputSwitch><br/>
+    </td>
+    <td class="formula-cells">
+      Kitchen Tap:
+      <p-inputSwitch [(ngModel)]="tap2Switch" (click)="tapClick()">></p-inputSwitch>
+    </td>
+    <td class="formula-cells">
+      Shower Tap:
+      <p-inputSwitch [(ngModel)]="tap3Switch" (click)="tapClick()">></p-inputSwitch>
+    </td>
+  </tr>
+   <tr>
+    <td class="formula-cells"> 
+     <div *ngIf="tap1Switch">
+        Given <sup>dh</sup>&frasl;<sub>dt</sub> for the tank = <sup>{{tap1Speed}}</sup>&frasl;<sub>2500 &#8719;</sub><sup>m</sup>&frasl;<sub>s</sub><br/>
+        <sup>dV</sup>&frasl;<sub>dt</sub> = <sup>( 2500 * {{tap1Speed}} * &#8719; )</sup>&frasl;<sub>(2500 * &#8719;)</sub><br/>
+        <sup>dV</sup>&frasl;<sub>dt</sub> = {{tap1Speed}} <sup>m <sup>3</sup></sup>&frasl;<sub>s</sub><br/>
+      </div>
+    </td>
+    <td class="formula-cells">
+      <div *ngIf="tap2Switch">
+        Given <sup>dh</sup>&frasl;<sub>dt</sub> for the tank = <sup>{{tap2Speed}}</sup>&frasl;<sub>2500 &#8719;</sub><sup>m</sup>&frasl;<sub>s</sub><br/>
+        <sup>dV</sup>&frasl;<sub>dt</sub> = <sup>( 2500 * {{tap2Speed}} * &#8719; )</sup>&frasl;<sub>(2500 * &#8719;)</sub><br/>
+        <sup>dV</sup>&frasl;<sub>dt</sub> = {{tap2Speed}} <sup>m <sup>3</sup></sup>&frasl;<sub>s</sub><br/>
+      </div>
+    </td>
+    <td class="formula-cells">
+      <div *ngIf="tap3Switch">
+        Given <sup>dh</sup>&frasl;<sub>dt</sub> for the tank = <sup>{{tap3Speed}}</sup>&frasl;<sub>2500 &#8719;</sub><sup>m</sup>&frasl;<sub>s</sub><br/>
+        <sup>dV</sup>&frasl;<sub>dt</sub> = <sup>( 2500 * {{tap3Speed}} * &#8719; )</sup>&frasl;<sub>(2500 * &#8719;)</sub><br/>
+        <sup>dV</sup>&frasl;<sub>dt</sub> = {{tap3Speed}} <sup>m <sup>3</sup></sup>&frasl;<sub>s</sub><br/>
+      </div>
+      </td>
+  </tr>
+
+  <tr>
+    <td>&nbsp;</td>
+    <td style="padding-top: 20px; font-size: 25pt;" class="formula-cells">
+     <div  *ngIf="allTapSpeed!=0" style="text-align:center">
+         <sup>dV</sup>&frasl;<sub>dt</sub> = {{allTapSpeed}} <sup>m <sup>3</sup></sup>&frasl;<sub>s</sub><br/>
+      </div>
+    </td>
+     <td>&nbsp;</td>
+  </tr>
+</table>
